@@ -1,0 +1,164 @@
+html, body{
+    height: 100vh;
+    font-family: Georgia, serif;
+    padding:0;
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "nav main aside"
+                        "nav content content";
+    grid-template-columns: minmax(min-content, 20rem) 1fr 20rem;
+    grid-template-rows: 20rem minmax(40rem, auto-fit);
+    grid-gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+nav{
+    grid-area: nav;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    }
+main{
+    grid-area: main;
+    margin-top: 0;
+    padding-top: 0;
+}
+aside{
+    grid-area: aside;
+}
+.cards{
+    grid-area: content;
+}
+
+/* Nav content CSS */
+nav h1{
+    font-family: Georgia, serif;
+    font-size: 2.3rem;
+    font-weight: 300;
+    text-align: center;
+
+}
+nav ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20%;
+    align-self: center;
+}
+nav li{
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 10%;
+}
+nav ul li:hover .underline {
+	background-color: #ff0000;
+	width: 100%;
+}
+nav a{
+    outline: none;
+}
+
+nav ul li a {
+	color:black;
+	text-decoration: none;
+	display: inline-block;	
+	padding: 10px;
+	transition: color 0.5s;
+}
+
+nav ul li .underline {
+	height: 3px;
+	background-color: transparent;
+	width: 0%;
+	transition: width 0.2s, background-color 0.5s;
+	margin: 0 auto;
+}
+
+nav ul li.active-link .underline {
+	width: 70%;
+	background-color: #ff0000;
+}
+
+nav ul li:hover .underline {
+	background-color: #ff0000;
+	width: 70%;
+}
+
+nav ul li:hover a {
+}
+
+nav ul li:active a {
+	transition: none;
+	color: #ff0000;
+}
+
+nav ul li:active .underline {
+	transition: none;
+	background-color: rgba(255,255,255,0.76);
+}
+nav div{
+    text-align: center;
+    width: 100%;
+}
+nav button{
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    border-right: 1px solid;
+    background-color: #ff0000;
+    color: white;
+    position: relative;
+    display: inline-block;
+    margin: 1em;
+    padding: 1em 2em;
+    border: 0;
+    border-radius: 30px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+/* Main grid CSS */
+main h1{
+    font-size: 4rem;
+    font-family: "Libre Baskerville";
+}
+
+/* aside grid CSS */
+aside p{
+    font-size: 25px;
+    padding: 2% 5%;
+    font-family: "Montserrat";
+}
+/* card CSS */
+.card {
+    background-color: whitesmoke;
+    float: left;
+    width: calc(20% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    height: 50%;
+    text-align: center;
+    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+ }
+ .card p {
+    font-size: 30px;
+ }
+ .cardsr:after {
+    content: "";
+    display: table;
+    clear: both;
+ }
+ .card img{
+    width: 60%;
+    height: 65%;
+    border-radius: 50%;
+ }
+ @media screen and (max-width: 600px) {
+    .card {
+       width: 100%;
+    }
+ }
